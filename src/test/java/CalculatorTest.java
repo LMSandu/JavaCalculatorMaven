@@ -10,6 +10,12 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
+
 @ExtendWith(TestReporterExtension.class)
 public class CalculatorTest {
 
@@ -37,12 +43,6 @@ public class CalculatorTest {
     @BeforeEach
     public void setUpEachTest() {
         basicCalculator = new Basic();
-        System.out.println("Before Each");
-    }
-
-    @AfterEach
-    public void tierDownEachTest() {
-        System.out.println("After Each");
     }
 
     @Tags({@Tag("smoke"), @Tag("ui")})
@@ -56,7 +56,7 @@ public class CalculatorTest {
         long result = basicCalculator.add(a, b);
 
         //THEN
-        System.out.println(result);
+        assertThat(result).isEqualTo(a+b);
     }
 
     @Tag("smoke")
@@ -65,10 +65,12 @@ public class CalculatorTest {
         //GIVEN
 
         // WHEN
-        long result = basicCalculator.add(-2, -4);
+        Long result = basicCalculator.add(-2, -4);
 
         //THEN
-        System.out.println(result);
+        assertEquals(-6L, result);
+        assertTrue(result.equals(-6L));
+
     }
 
     @Tags({@Tag("smoke"), @Tag("api")})
@@ -81,7 +83,7 @@ public class CalculatorTest {
         long result = basicCalculator.add(Integer.MAX_VALUE, 1);
 
         //THEN
-        System.out.println(result);
+        assertThat(result, notNullValue());
     }
 
     @Test
@@ -92,7 +94,7 @@ public class CalculatorTest {
         long result = basicCalculator.add(2, 1, 2, 1);
 
         //THEN
-        System.out.println(result);
+        assertThat(result, equalTo(6L));
     }
 
     @Test
@@ -103,7 +105,7 @@ public class CalculatorTest {
         long result = basicCalculator.add();
 
         //THEN
-        System.out.println(result);
+        assertThat(result, equalTo(0L));
     }
 
     @Test
@@ -114,7 +116,7 @@ public class CalculatorTest {
         long result = basicCalculator.add(1);
 
         //THEN
-        System.out.println(result);
+        assertThat(result, lessThan(2L));
     }
 
 

@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
 import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.platform.engine.TestExecutionResult;
 import org.junit.platform.launcher.TestExecutionListener;
 import org.junit.platform.launcher.TestIdentifier;
 
@@ -24,10 +25,16 @@ public class TestReporterExtension implements BeforeTestExecutionCallback, After
     }
 
     @Override
-    public void executionStarted(TestIdentifier testIdentifier){
-        System.out.println("syso");
-        if(testIdentifier.isTest()){
+    public void executionStarted(TestIdentifier testIdentifier) {
+        if (testIdentifier.isTest()) {
             LOGGER.info("Starting test {}", testIdentifier.getDisplayName());
+        }
+    }
+
+    public void executionFinished(TestIdentifier testIdentifier, TestExecutionResult testExecutionResult) {
+        if (testIdentifier.isTest()) {
+            LOGGER.info("Test {} finished with result: {} ", testIdentifier.getDisplayName(), testExecutionResult.getStatus().toString());
+
         }
     }
 }

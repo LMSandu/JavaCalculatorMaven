@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="CalculatorTest" time="0.177" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="DateTest" time="0.017" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="18"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -57,54 +57,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="62.0"/>
   </properties>
-  <testcase name="shouldAddBigNumbers" classname="CalculatorTest" time="0.03">
-    <system-out><![CDATA[Before all
-16:11:50.695 [main] INFO  com.endava.extensions.TestReporterExtension - Starting test shouldAddBigNumbers()
-16:11:50.715 [main] INFO  com.endava.extensions.TestReporterExtension - Starting test CalculatorTest/shouldAddBigNumbers()
-16:11:50.725 [main] INFO  com.endava.extensions.TestReporterExtension - Finishing test CalculatorTest/shouldAddBigNumbers()
-16:11:50.729 [main] INFO  com.endava.extensions.TestReporterExtension - Test shouldAddBigNumbers() finished with result: SUCCESSFUL 
-]]></system-out>
-  </testcase>
-  <testcase name="shouldAddMultipleOperands" classname="CalculatorTest" time="0.004">
-    <system-out><![CDATA[16:11:50.733 [main] INFO  com.endava.extensions.TestReporterExtension - Starting test shouldAddMultipleOperands()
-16:11:50.733 [main] INFO  com.endava.extensions.TestReporterExtension - Starting test CalculatorTest/shouldAddMultipleOperands()
-16:11:50.737 [main] INFO  com.endava.extensions.TestReporterExtension - Finishing test CalculatorTest/shouldAddMultipleOperands()
-16:11:50.737 [main] INFO  com.endava.extensions.TestReporterExtension - Test shouldAddMultipleOperands() finished with result: SUCCESSFUL 
-]]></system-out>
-  </testcase>
-  <testcase name="shouldAddNoOperands" classname="CalculatorTest" time="0.004">
-    <system-out><![CDATA[16:11:50.737 [main] INFO  com.endava.extensions.TestReporterExtension - Starting test shouldAddNoOperands()
-16:11:50.737 [main] INFO  com.endava.extensions.TestReporterExtension - Starting test CalculatorTest/shouldAddNoOperands()
-16:11:50.741 [main] INFO  com.endava.extensions.TestReporterExtension - Finishing test CalculatorTest/shouldAddNoOperands()
-16:11:50.741 [main] INFO  com.endava.extensions.TestReporterExtension - Test shouldAddNoOperands() finished with result: SUCCESSFUL 
-]]></system-out>
-  </testcase>
-  <testcase name="shouldAddNumbersGivenOperand0(int, int)[1]" classname="CalculatorTest" time="0.054">
-    <system-out><![CDATA[16:11:50.757 [main] INFO  com.endava.extensions.TestReporterExtension - Starting test [1] 0, 2
-16:11:50.762 [main] INFO  com.endava.extensions.TestReporterExtension - Starting test CalculatorTest/[1] 0, 2
-16:11:50.811 [main] INFO  com.endava.extensions.TestReporterExtension - Finishing test CalculatorTest/[1] 0, 2
-16:11:50.811 [main] INFO  com.endava.extensions.TestReporterExtension - Test [1] 0, 2 finished with result: SUCCESSFUL 
-]]></system-out>
-  </testcase>
-  <testcase name="shouldAddNumbersGivenOperand0(int, int)[2]" classname="CalculatorTest" time="0.004">
-    <system-out><![CDATA[16:11:50.827 [main] INFO  com.endava.extensions.TestReporterExtension - Starting test [2] 2, 0
-16:11:50.827 [main] INFO  com.endava.extensions.TestReporterExtension - Starting test CalculatorTest/[2] 2, 0
-16:11:50.831 [main] INFO  com.endava.extensions.TestReporterExtension - Finishing test CalculatorTest/[2] 2, 0
-16:11:50.831 [main] INFO  com.endava.extensions.TestReporterExtension - Test [2] 2, 0 finished with result: SUCCESSFUL 
-]]></system-out>
-  </testcase>
-  <testcase name="shouldAddNegativeNumbers" classname="CalculatorTest" time="0.008">
-    <system-out><![CDATA[16:11:50.831 [main] INFO  com.endava.extensions.TestReporterExtension - Starting test shouldAddNegativeNumbers()
-16:11:50.835 [main] INFO  com.endava.extensions.TestReporterExtension - Starting test CalculatorTest/shouldAddNegativeNumbers()
-16:11:50.839 [main] INFO  com.endava.extensions.TestReporterExtension - Finishing test CalculatorTest/shouldAddNegativeNumbers()
-16:11:50.839 [main] INFO  com.endava.extensions.TestReporterExtension - Test shouldAddNegativeNumbers() finished with result: SUCCESSFUL 
-]]></system-out>
-  </testcase>
-  <testcase name="shouldAddOneOperand" classname="CalculatorTest" time="0.005">
-    <system-out><![CDATA[16:11:50.839 [main] INFO  com.endava.extensions.TestReporterExtension - Starting test shouldAddOneOperand()
-16:11:50.839 [main] INFO  com.endava.extensions.TestReporterExtension - Starting test CalculatorTest/shouldAddOneOperand()
-16:11:50.844 [main] INFO  com.endava.extensions.TestReporterExtension - Finishing test CalculatorTest/shouldAddOneOperand()
-16:11:50.844 [main] INFO  com.endava.extensions.TestReporterExtension - Test shouldAddOneOperand() finished with result: SUCCESSFUL 
+  <testcase name="testDates" classname="DateTest" time="0.017">
+    <system-out><![CDATA[16:11:50.848 [main] INFO  com.endava.extensions.TestReporterExtension - Starting test testDates()
+16:11:50.865 [main] INFO  com.endava.extensions.TestReporterExtension - Test testDates() finished with result: SUCCESSFUL 
 ]]></system-out>
   </testcase>
 </testsuite>

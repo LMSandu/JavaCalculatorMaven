@@ -6,6 +6,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class CalculatorIT {
 
     private BasicOperations basicCalculator;
@@ -15,7 +19,6 @@ public class CalculatorIT {
     public void setUpEachTest() {
         basicCalculator = new Basic();
         expertCalculator = new Expert();
-        System.out.println("Next test...");
     }
 
     @Tag("multiply")
@@ -26,7 +29,7 @@ public class CalculatorIT {
         long result = basicCalculator.multiply(-1, -4);
 
         //THEN
-        System.out.println(result);
+        assertThat(result, equalTo(4L));
     }
 
     @Tag("multiply")
@@ -37,7 +40,7 @@ public class CalculatorIT {
         long result = basicCalculator.multiply(1, -4);
 
         //THEN
-        System.out.println(result);
+        assertThat(result).isEqualTo(-4L).isNegative();
     }
 
     @Tag("multiply")
@@ -48,7 +51,7 @@ public class CalculatorIT {
         long result = basicCalculator.multiply(3, 4);
 
         //THEN
-        System.out.println(result);
+        assertThat(result).isEqualTo(12L).isNotNull();
     }
 
     @Tag("multiply")
@@ -59,7 +62,7 @@ public class CalculatorIT {
         long result = basicCalculator.multiply();
 
         //THEN
-        System.out.println(result);
+        assertThat(result).isEqualTo(1);
     }
 
     @Tag("multiply")
@@ -70,7 +73,7 @@ public class CalculatorIT {
         long result = basicCalculator.multiply(2);
 
         //THEN
-        System.out.println(result);
+        assertThat(result, equalTo(2L));
     }
 
     @Tag("pow")
@@ -81,7 +84,7 @@ public class CalculatorIT {
         double result = expertCalculator.pow(2, 2);
 
         //THEN
-        System.out.println(result);
+        assertThat(result, equalTo(4D));
     }
 
     @Tag("pow")
@@ -92,7 +95,7 @@ public class CalculatorIT {
         double result = expertCalculator.pow(-2, 2);
 
         //THEN
-        System.out.println(result);
+        assertThat(result).isNotNegative();
     }
 
     @Tag("pow")
@@ -103,7 +106,7 @@ public class CalculatorIT {
         double result = expertCalculator.pow(2, 1);
 
         //THEN
-        System.out.println(result);
+        assertThat(result, equalTo(2D));
     }
 
     @Tag("pow")
@@ -114,7 +117,7 @@ public class CalculatorIT {
         double result = expertCalculator.pow(2, 0);
 
         //THEN
-        System.out.println(result);
+        assertThat(result, equalTo(1D));
     }
 
     @Tag("fact")
@@ -125,7 +128,7 @@ public class CalculatorIT {
         double result = expertCalculator.factRec(1);
 
         //THEN
-        System.out.println(result);
+        assertThat(result, equalTo(1D));
     }
 
     @Tag("fact")
@@ -136,6 +139,6 @@ public class CalculatorIT {
         double result = expertCalculator.factRec(6);
 
         //THEN
-        System.out.println(result);
+        assertThat(result).isEqualTo(720D);
     }
 }
