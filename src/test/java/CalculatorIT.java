@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-public class CalculatorIT implements LauncherSessionListener  {
+public class CalculatorIT {
 
     private BasicOperations basicCalculator;
     private ExpertOperations expertCalculator;
@@ -15,7 +15,7 @@ public class CalculatorIT implements LauncherSessionListener  {
     public void setUpEachTest() {
         basicCalculator = new Basic();
         expertCalculator = new Expert();
-        System.out.println("Before Each");
+        System.out.println("Next test...");
     }
 
     @Tag("multiply")

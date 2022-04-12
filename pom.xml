@@ -60,6 +60,21 @@
             <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>1.8.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.8.2</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+        </dependency>
 
 
     </dependencies>
@@ -70,18 +85,18 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <version>3.0.0-M6</version>
             <configuration>
-                <groups>multiply, pow, fact</groups>
+<!--                <groups>multiply, pow, fact</groups>-->
 <!--                <excludedGroups>api</excludedGroups>-->
-                <skipTests>true</skipTests>
+<!--                <skipTests>true</skipTests>-->
             </configuration>
         </plugin>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
             <version>3.0.0-M6</version>
-            <configuration>
-                <skipITs>true</skipITs>
-            </configuration>
+<!--            <configuration>-->
+<!--                <skipITs>true</skipITs>-->
+<!--            </configuration>-->
             <executions>
                 <execution>
                     <goals>
